@@ -8,7 +8,6 @@ import './App.css';
 // let res = response.images;
 
 //TODO ADD the different column to the chart
-//loop the the good and bad images to set condition to add them to their groups
 function App() {
   const[isModelLoading, setIsModelLoading] = useState(false);
   const[model, setModel] = useState<any | null>();
@@ -84,9 +83,9 @@ function App() {
     return <h2>Model Loading...</h2>
   }
 
-  console.log("@@@@@@@@",results)
-  console.log("bad image",badImage)
-  console.log("good image",goodImage)
+  // console.log("@@@@@@@@",results)
+  // console.log("bad image",badImage)
+  // console.log("good image",goodImage)
   return (
     <>
         <h1 className='App-header'>Yembo Data Visualization Tool</h1>
@@ -132,7 +131,6 @@ function App() {
                   return (
                       <div className='result' key={result.className}>
                           <span className='name'>{result.className}</span>
-                          <span className='confidence'>Confidence level: {(result.probability * 100).toFixed(2)}% {index === 0 && <span className='bestGuess'>Best Guess</span>}</span>
                       </div>
                   )
               })}
@@ -140,19 +138,7 @@ function App() {
           </ul>
        
  
-        </div>
-        {/* {history.length > 0 && <div className="recentPredictions">
-            <h2>Recent Images</h2>
-            <div className="recentImages">
-                {history.map((image, index) => {
-                    return (
-                        <div className="recentPrediction" key={`${image}${index}`}>
-                            <img src={image} alt='Recent Prediction' onClick={() => setImageSelected(image)} />
-                        </div>
-                    )
-                })}
-            </div>
-        </div>} */}
+        </div> 
     </>
 );
 }
